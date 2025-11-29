@@ -1,0 +1,13 @@
+{
+  "name": "task-router",
+  "dependencies": {
+    "express": "^4.18.2",
+    "amqplib": "^0.10.3",
+    "redis": "^4.6.7",
+    "uuid": "^9.0.0",
+    "winston": "^3.11.0"
+  },
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}

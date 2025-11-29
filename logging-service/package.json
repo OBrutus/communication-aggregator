@@ -1,0 +1,12 @@
+{
+  "name": "logging-service",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "@elastic/elasticsearch": "^8.9.0",
+    "winston": "^3.11.0",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "node src/logger.js"
+  }
+}

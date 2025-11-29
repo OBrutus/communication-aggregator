@@ -1,0 +1,12 @@
+{
+  "name": "delivery-service",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "sqlite3": "^5.1.6",
+    "winston": "^3.11.0",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "node src/processor.js"
+  }
+}

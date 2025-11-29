@@ -1,0 +1,8 @@
+.vscode/
+
+task-router/node_modules/*
+
+delivery-service/node_modules/
+delivery-service/messages.db
+
+logging-service/node_modules/
