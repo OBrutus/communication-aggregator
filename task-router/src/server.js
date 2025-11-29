@@ -31,7 +31,7 @@ async function startServer() {
   try {
     const connection = await amqp.connect(RABBITMQ_URL);
     channel = await connection.createChannel();
-    
+
     // Assert queues for each channel type
     await channel.assertQueue('email_queue', { durable: true });
     await channel.assertQueue('sms_queue', { durable: true });
@@ -72,7 +72,7 @@ async function startServer() {
       correlationId,
       timestamp: new Date().toISOString()
     };
-    
+
     channel.sendToQueue(
       'logging_queue', 
       Buffer.from(JSON.stringify(logMessage)),
@@ -84,10 +84,10 @@ async function startServer() {
   app.post('/api/messages', async (req, res) => {
     const traceId = uuidv4();
     const startTime = Date.now();
-    
+
     try {
       const message = req.body;
-      
+
       // Log incoming request
       await sendToLogging({
         traceId,
@@ -99,7 +99,7 @@ async function startServer() {
 
       // Validate message
       validateMessage(message);
-      
+
       // Check for duplicates
       if (await isDuplicate(message.messageId)) {
         await sendToLogging({
